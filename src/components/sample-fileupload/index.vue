@@ -12,7 +12,10 @@ export default {
     handleUpload(event) {
       let formdata = new FormData(event.target);
       this.$http
-        .post(`http://localhost:5000/api/file/upload-sample`, formdata)
+        .post(
+          `https://vue-resume-api.herokuapp.com/api/file/upload-sample`,
+          formdata
+        )
         .then((response) => {
           console.log(response.data);
         })
