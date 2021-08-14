@@ -1,27 +1,50 @@
 <template>
-  <v-container fluid>
+  <v-container>
     <v-row>
-      <v-col cols="12" md="8">
-        <featured />
+      <v-col cols="12">
+        <v-card>
+          <div class="pa-16">
+            <h1>Welcome to my page</h1>
+            <h4>This is page is for VueJS practice only.</h4>
+            <h5>
+              contents are for testing only. credit to the owner of resources.
+            </h5>
+          </div>
+        </v-card>
       </v-col>
 
-      <v-col cols="12" md="4">
-        <login />
+      <v-col cols="12">
+        <div>
+          <h2>Build with:</h2>
+        </div>
+      </v-col>
+
+      <v-col
+        cols="12"
+        sm="4"
+        v-for="resource in resources"
+        v-bind:key="resource.name"
+      >
+        <v-card elevation="5" shaped>
+          <div class="pa-10">
+            <v-img height="250" v-bind:src="resource.icon"></v-img>
+            <v-card-title> {{ resource.name }} </v-card-title>
+            <v-card-text>
+              <p class="text-truncate">
+                {{ resource.description }}
+              </p>
+            </v-card-text>
+          </div>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import Login from "../login/index.vue";
-import Featured from "../featured/index.vue";
-
 export default {
   name: "Dashboard",
-  components: {
-    login: Login,
-    featured: Featured,
-  },
+
   data() {
     return {
       resources: [

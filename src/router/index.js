@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import PageNotFound from "../components/PageNotFound.vue";
-
+import BuildWith from "../components/build-with/Dashboard.vue";
 const routes = [
   {
     path: "/",
@@ -17,6 +17,13 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+
+  {
+    path: "/build-with",
+    name: "BuildWith",
+    component: BuildWith,
+  },
+
   {
     path: "/:pathMatch(.*)*",
     name: "PageNotFound",

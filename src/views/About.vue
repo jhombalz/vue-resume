@@ -2,13 +2,13 @@
   <div class="about">
     <AboutComponent />
   </div>
-</template> 
+</template>
 
-<script>    
-import AboutComponent from '../components/about/AboutComponent.vue';
-  // @ is an alias to /src    
-  export default {
-  components: { AboutComponent }, 
-    name: "About", 
-  };
+<script>
+import AboutComponent from "../components/about/AboutComponent.vue";
+// @ is an alias to /src
+export default {
+  components: { AboutComponent },
+  name: "About",
+};
 </script>

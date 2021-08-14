@@ -63,32 +63,22 @@
                 CSS - CSS / CSS 3 / Bootstrap / Material UI
               </p>
 
-              <p class="text-justify">
-                HTMl - HTML / HTML5
-              </p>
+              <p class="text-justify">HTMl - HTML / HTML5</p>
 
-              <p class="text-justify">
-                React - ReactJS / Native [ current ]
-              </p>
+              <p class="text-justify">React - ReactJS / Native [ current ]</p>
 
-              <p class="text-justify">
-                PHP - laravel and pure php
-              </p>
+              <p class="text-justify">PHP - laravel and pure php</p>
 
-              <p class="text-justify">
-                NODE - as api only.
-              </p> 
+              <p class="text-justify">NODE - as api only.</p>
 
-              <p class="text-justify">
-                VUE - beginner
-              </p> 
+              <p class="text-justify">VUE - beginner</p>
 
-              <p class="text-justify">
-                DATABASE -  mysql/mongodb/postgsql
-              </p> 
+              <p class="text-justify">DATABASE - mysql/mongodb/postgsql</p>
 
               <p class="text-justify mt-5">
-                  I'm a web developer since 2012, I started with simple dynamic website built with html and css. After a while I started to use php and javacript for almost every activity then...
+                I'm a web developer since 2012, I started with simple dynamic
+                website built with html and css. After a while I started to use
+                php and javacript for almost every activity then...
               </p>
 
               <p class="text-right mt-2">-- Autodidacticism</p>
@@ -103,6 +93,8 @@
 <script>
 export default {
   name: "AboutComponent",
+  methods: {},
+  mounted: function () {},
 };
 </script>
 
