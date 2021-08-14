@@ -17,7 +17,7 @@
 
               <p>{{ slide.name }}</p>
               <p>{{ slide.title }}</p>
-              <p>{{ slide.description }}</p>
+              <p class="text-wrap">{{ slide.description }}</p>
             </div>
           </slide>
         </carousel>

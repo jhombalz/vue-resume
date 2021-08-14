@@ -8,6 +8,7 @@
       <router-link to="/"> Home</router-link>
       <router-link to="/about">About</router-link>
       <router-link to="/build-with">Build With</router-link>
+
       <a v-on:click="toggleTheme">{{ mode }} Mode</a>
     </div>
   </v-card>

@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import PageNotFound from "../components/PageNotFound.vue";
-import BuildWith from "../components/build-with/Dashboard.vue";
+import PageNotFound from "../views/PageNotFound.vue";
+import BuildWith from "../views/BuildWith.vue";
+import SampleFileUploadView from "../views/SampleFileUploadView.vue";
+
 const routes = [
   {
     path: "/",
@@ -23,7 +25,12 @@ const routes = [
     name: "BuildWith",
     component: BuildWith,
   },
-
+  {
+    path: "/sample-file-upload",
+    name: "SampleFileUploadView",
+    component: SampleFileUploadView,
+  },
+  // page not found
   {
     path: "/:pathMatch(.*)*",
     name: "PageNotFound",
