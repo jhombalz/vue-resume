@@ -3,13 +3,14 @@
     <div class="pa-3">
       <form @submit.prevent="handleSentSMS">
         <div>
-          <label htmlFor="to">To:</label>
+          <label htmlFor="to">To:(+63)</label>
           <input
             v-model="to"
             name="to"
             id="to"
             type="text"
             class="pa-5 text-primary border border-primary rounded-lg mb-10"
+            placeholder="9012345678"
           />
         </div>
         <div>
