@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import PageNotFound from "../views/PageNotFound.vue";
 import BuildWith from "../views/BuildWith.vue";
 import SampleFileUploadView from "../views/SampleFileUploadView.vue";
+import SMS from "../views/SMS.vue";
 
 const routes = [
   {
@@ -30,6 +31,13 @@ const routes = [
     name: "SampleFileUploadView",
     component: SampleFileUploadView,
   },
+
+  {
+    path: "/sms-messaging",
+    name: "SMS",
+    component: SMS,
+  },
+
   // page not found
   {
     path: "/:pathMatch(.*)*",
