@@ -6,6 +6,12 @@ import "vue3-carousel/dist/carousel.css";
 import axios from "axios";
 import VueAxios from "vue-axios";
 
+const baseURL = "https://vue-resume-api.herokuapp.com";
+
+if (typeof baseURL !== "undefined") {
+  Vue.axios.defaults.baseURL = baseURL;
+}
+
 const app = createApp(App);
 app.use(router);
 app.use(vuetify);

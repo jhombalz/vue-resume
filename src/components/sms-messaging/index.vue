@@ -39,7 +39,7 @@ export default {
   methods: {
     handleSentSMS() {
       this.$http
-        .post(`http://localhost:5000/api/sms/messaging/sent`, {
+        .post(`https://vue-resume-api.herokuapp.com/api/sms/messaging/sent`, {
           to: this.to,
           body: `+639${this.body}`,
         })
