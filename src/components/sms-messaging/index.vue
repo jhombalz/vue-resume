@@ -1,6 +1,7 @@
 <template>
   <v-card>
-    <div class="pa-3">
+    <div class="pa-5 fullwith-input">
+      <p class="text-h6 mb-3">Send SMS</p>
       <form @submit.prevent="handleSentSMS">
         <div>
           <label htmlFor="to">To:(+63)</label>
@@ -54,3 +55,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.fullwith-input input {
+  width: 100%;
+}
+</style>
