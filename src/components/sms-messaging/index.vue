@@ -4,7 +4,7 @@
       <p class="text-h6 mb-3">Send SMS</p>
       <form @submit.prevent="handleSentSMS">
         <div>
-          <label htmlFor="to">To:(+63)</label>
+          <label htmlFor="to">To:(+639)</label>
           <input
             v-model="to"
             name="to"
@@ -41,9 +41,9 @@ export default {
   methods: {
     handleSentSMS() {
       this.$http
-        .post(`https://vue-resume-api.herokuapp.com/api/sms/messaging/sent`, {
-          to: this.to,
-          body: `+639${this.body}`,
+        .post(`http://localhost:5000/api/sms/messaging/sent`, {
+          to: `+639${this.to}`,
+          body: this.body,
         })
         .then((response) => {
           console.log(response.data);
