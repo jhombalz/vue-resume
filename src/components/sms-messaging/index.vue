@@ -2,9 +2,15 @@
   <v-card>
     <div class="pa-5 fullwith-input">
       <p class="text-h6 mb-3">Send SMS</p>
+      <p>
+        {{ message.error }}
+      </p>
+      <p>
+        {{ message.success }}
+      </p>
       <form @submit.prevent="handleSentSMS">
         <div>
-          <label htmlFor="to">To:(+639)</label>
+          <label htmlFor="to">To:(+63)</label>
           <input
             v-model="to"
             name="to"
@@ -24,7 +30,9 @@
             class="pa-5 text-primary border border-primary rounded-lg mb-10"
           />
         </div>
-        <v-btn type="submit" color="primary"> Send message </v-btn>
+        <v-btn type="submit" color="primary" :disabled="loading">
+          Send message
+        </v-btn>
       </form>
     </div>
   </v-card>
@@ -36,21 +44,34 @@ export default {
     return {
       to: "",
       body: "",
+      loading: false,
+      message: {
+        error: "",
+        success: "",
+      },
     };
   },
   methods: {
     handleSentSMS() {
+      this.loading = true;
       this.$http
         .post(`http://localhost:5000/api/sms/messaging/sent`, {
-          to: `+639${this.to}`,
+          to: `+63${this.to}`,
           body: this.body,
         })
         .then((response) => {
-          console.log(response.data);
+          if (response.data.success) {
+            this.message.success = "message successfully sent.";
+          } else {
+            this.message.error = "message unsuccessfull.";
+          }
         })
         .catch((error) => {
+          this.message.error =
+            error.message || "Unable to send sms to unrigestered number.";
           console.log(error);
-        });
+        })
+        .finally(() => (this.loading = false));
     },
   },
 };
