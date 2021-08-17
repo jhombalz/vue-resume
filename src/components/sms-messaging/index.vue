@@ -61,9 +61,10 @@ export default {
         })
         .then((response) => {
           if (response.data.success) {
-            this.message.success = "message successfully sent.";
+            this.message.success = "Message successfully sent.";
           } else {
-            this.message.error = "message unsuccessfull.";
+            this.message.error =
+              "Message unsuccessfull. Unable to send sms to unrigestered number.";
           }
         })
         .catch((error) => {
