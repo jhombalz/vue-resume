@@ -10,5 +10,5 @@ const app = createApp(App);
 app.use(router);
 app.use(vuetify);
 app.use(VueAxios, axios);
-
+app.axios.defaults.baseURL = `${process.env.VUE_APP_API}`;
 app.mount("#app");

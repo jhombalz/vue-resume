@@ -9,7 +9,6 @@
 import { ref } from "vue";
 import Dashboard from "../components/build-with/Dashboard.vue";
 export default {
-  name: "BuildWith",
   components: {
     Dashboard,
   },

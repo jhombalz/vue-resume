@@ -4,6 +4,8 @@ import PageNotFound from "../views/PageNotFound.vue";
 import BuildWith from "../views/BuildWith.vue";
 import SampleFileUploadView from "../views/SampleFileUploadView.vue";
 import SMS from "../views/SMS.vue";
+import RouteRegistration from "../views/RouteRegistration.vue";
+import RouteYTD from "../views/RouteYTD.vue";
 
 const routes = [
   {
@@ -36,6 +38,18 @@ const routes = [
     path: "/sms-messaging",
     name: "SMS",
     component: SMS,
+  },
+
+  {
+    path: "/registration",
+    name: "RouteRegistration",
+    component: RouteRegistration,
+  },
+
+  {
+    path: "/ytd",
+    name: "RouteYTD",
+    component: RouteYTD,
   },
 
   // page not found

@@ -8,7 +8,6 @@
 // @ is an alias to /src
 import PageNotFound from "../components/PageNotFound.vue";
 export default {
-  name: "PageNotFound",
   components: {
     PageNotFound,
   },

@@ -9,7 +9,6 @@
 // @ is an alias to /src
 import SMSMessaging from "../components/sms-messaging/index.vue";
 export default {
-  name: "SMS",
   components: {
     smsmessaging: SMSMessaging,
   },

@@ -10,6 +10,7 @@
       <router-link to="/build-with">Build With</router-link>
       <router-link to="/sample-file-upload"> upload file </router-link>
       <router-link to="/sms-messaging"> SMS </router-link>
+      <router-link to="/ytd"> YT Downloader </router-link>
 
       <a v-on:click="toggleTheme">{{ mode }} Mode</a>
     </div>

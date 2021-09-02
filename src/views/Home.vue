@@ -9,7 +9,6 @@
 import { ref } from "vue";
 import Dashboard from "../components/home/Dashboard.vue";
 export default {
-  name: "Home",
   components: {
     Dashboard,
   },

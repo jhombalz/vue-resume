@@ -23,7 +23,10 @@
 
         <div>
           <p class="text-center">
-            No account yet? <router-link to="/">Click here.</router-link>
+            No account yet?
+            <router-link to="/registration" class="text-secondary">
+              Register here.
+            </router-link>
           </p>
         </div>
       </div>
