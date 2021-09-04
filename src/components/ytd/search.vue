@@ -53,6 +53,15 @@
                         {{ item.snippet.description }}
                       </p>
                     </div>
+
+                    <!-- trigger -->
+                    <a
+                      ref="musicTag"
+                      target="_blank"
+                      :href="dowloadTag"
+                      download
+                      class="text-subtitle-2"
+                    />
                     <div class="pa-2">
                       <v-btn
                         variant="text"
@@ -107,14 +116,6 @@
                         </v-btn>
                       </div>
                     </div>
-
-                    <!-- trigger -->
-                    <a
-                      ref="musicTag"
-                      target="_blank"
-                      download
-                      class="text-subtitle-2"
-                    />
                   </v-col>
                 </v-row>
               </v-card>
@@ -171,6 +172,7 @@ export default {
     handleDownloadMusic: function (event, videoId) {
       this.dowloadTag = "";
       this.downloadReady = false;
+
       this.downloadVideoId = videoId;
 
       var xuri = `https://www.youtube.com/watch?v=${videoId}`;
@@ -186,7 +188,7 @@ export default {
         .then((response) => {
           const data = response.data;
           if (data.status) {
-            this.$refs.musicTag.href = `${process.env.VUE_APP_API}/api/ytd/download-url-mp3?URL=${xuri}&downloadFormat=audioonly&title=${data.title}&quality=highestaudio`;
+            this.dowloadTag = `${process.env.VUE_APP_API}/api/ytd/download-url-mp3?URL=${xuri}&downloadFormat=audioonly&title=${data.title}&quality=highestaudio`;
 
             this.downloadReady = true;
 
@@ -220,8 +222,9 @@ export default {
         .then((response) => {
           const data = response.data;
           if (data.status) {
-            this.$refs.musicTag.href = `${process.env.VUE_APP_API}/api/ytd/download-url-video?URL=${xuri}&downloadFormat=audioandvideo&title=${data.title}&quality=highestvideo`;
+            this.dowloadTag = `${process.env.VUE_APP_API}/api/ytd/download-url-video?URL=${xuri}&downloadFormat=audioandvideo&title=${data.title}&quality=highestvideo`;
             this.downloadReady = true;
+
             this.downloadSize = (
               Math.round(parseInt(data.audioFormats[0].contentLength) / 1000) /
               1000
@@ -235,6 +238,7 @@ export default {
     },
 
     handleDownloadFile: function () {
+      console.log("this.$refs.musicTag.href:", this.dowloadTag);
       this.$refs.musicTag.click();
     },
   },
